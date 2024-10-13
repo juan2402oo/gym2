@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: margin-left 0.3s; 
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #837e7e, #474646, #111111);
+    padding: 0;
+    color: white;
+    height: 120px; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    z-index: 10; /* Asegura que el banner esté encima de otros elementos menos importantes */
+    transition: margin-left 0.3s; 
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px; /* Ajusta el padding según sea necesario */
+}
+
+.sub-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    right: 0;
+    z-index: 9; /* Está justo debajo del banner */
+    transition: margin-left 0.3s;
+}
+
+.sub-banner-item a {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.sub-banner-item:hover {
+    background-color: #6a6a6a;
+}
+
+.menu-icon {
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.logo {
+    height: 220px; 
+    width: 200px;
+    cursor: pointer; 
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 50px; /* Ajusta la altura según sea necesario */
+}
+
+.search-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 8; /* Asegura que la barra de búsqueda esté por encima de la barra lateral pero por debajo del menú de inicio de sesión */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px 45px 10px 40px; 
+    font-size: 16px;
+    border-radius: 30px; 
+    border: 2px solid #ccc; 
+    outline: none; 
+    width: 300px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    color: #ccc; 
+}
+
+.login-container {
+    position: relative;
+    margin-right: 50px;
+    z-index: 11; /* Asegura que el menú de inicio de sesión esté por encima del banner y del sub-banner */
+}
+
+.login-button {
+    background-color: #41101000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.login-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 12; /* Asegura que el menú de inicio de sesión esté encima del banner y del sub-banner */
+    width: 200px;
+}
+
+.login-menu p {
+    margin: 10px 0;
+}
+
+.login-menu a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.logout-button {
+    color: rgb(255, 255, 255); /* Cambia el color del texto a morado */
+    background-color: rgba(255, 255, 255, 0); /* Cambia el color de fondo del botón si es necesario */
+    border: 1px solid rgba(128, 0, 128, 0); /* Cambia el borde del botón a morado si es necesario */
+    padding: 10px 20px; /* Ajusta el padding del botón si es necesario */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+    border-radius: 5px; /* Ajusta el radio del borde si es necesario */
+}
+
+.logout-button:hover {
+    background-color: rgba(128, 0, 128, 0); /* Cambia el color de fondo cuando se pasa el mouse sobre el botón */
+    color: white; /* Cambia el color del texto a blanco cuando se pasa el mouse sobre el botón */
+}
+.login-menu a:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #8d8d8d;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Oculta el sidebar fuera de la pantalla inicialmente */
+    height: 100%;
+    overflow: auto;
+    padding-top: 20px; /* Ajusta el padding superior según sea necesario */
+    transition: left 0.3s;
+    z-index: 8; /* Asegura que el sidebar esté debajo del banner y el menú de inicio de sesión */
+}
+.sidebar a {
+    display: block;
+    color: #000000;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd; /* Línea separadora entre opciones */
+    transition: background-color 0.3s, color 0.3s;
+}
+.sidebar a:hover {
+    background-color: #ddd; /* Color de fondo al pasar el ratón */
+    color: #000; /* Color del texto al pasar el ratón */
+}
+
+#content {
+    transition: margin-left 0.3s;
+    padding: 20px;
+    margin-top: 120px; 
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    height: 100%; 
+    margin: 0;
+    overflow: hidden;
+    padding-top: 50px; 
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin: 0;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    margin-top: -20px; 
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: auto;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+@media (max-width: 1200px) {
+    .banner {
+        height: 100px; 
+    }
+
+    .sub-banner {
+        height: 40px; 
+        top: 100px;
+    }
+
+    .logo {
+        height: 150px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 80px; 
+    }
+
+    .sub-banner {
+        height: 35px; 
+        top: 80px;
+    }
+
+    .logo {
+        height: 100px; 
+    }
+
+    .menu-icon {
+        font-size: 30px; 
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 14px; 
+        width: 250px; 
+    }
+
+    .login-container {
+        margin-right: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 60px; 
+    }
+
+    .sub-banner {
+        height: 30px; 
+        top: 60px;
+    }
+
+    .logo {
+        height: 80px; 
+    }
+
+    .menu-icon {
+        font-size: 25px; 
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 12px; 
+        width: 200px; 
+    }
+
+    .login-container {
+        margin-right: 10px; 
+    }
+}
